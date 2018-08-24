@@ -3,6 +3,20 @@
 //  * See COPYING.txt for license details.
 //  */
 
+// Mobile
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .action.tocart {
+        .lib-css(margin-bottom, @indent__s);
+    }
+}
+
+//Desktop
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .action.tocart {
+        .lib-css(margin-bottom, @indent__m);
+    }
+}
+
 //
 //  Luma theme overrides
 //  _____________________________________________
