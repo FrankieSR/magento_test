@@ -8,5 +8,13 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <move element="page.main.title" destination="product.info.options.wrapper.bottom" after="product.info.addtocart.additional"/>
+
+        <referenceBlock name="product.info.details">
+           <block class="Magento\Catalog\Block\Product\View\Attributes" name="more.table" template="product/view/more_table.phtml" group="detailed_info">
+               <arguments>
+                   <argument name="title" translate="true" xsi:type="string">One more table</argument>
+               </arguments>
+            </block>
+        </referenceBlock>
     </body>
 </page>
