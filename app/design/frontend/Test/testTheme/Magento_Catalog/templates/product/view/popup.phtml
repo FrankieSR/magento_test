@@ -1,0 +1,52 @@
+<div>
+    <button type="button" id="popup" name="button">Popup</button>
+</div>
+
+<div id="popup-modal" style="display:none;">
+    <form class="" action="#" method="post">
+        <div class="first-input">
+            <label for="first">Your a text write in this field</label>
+            <input type="text" class="first" placeholder="any text">
+        </div>
+        <div class="second-input">
+            <label for="second">Your a text write in this field</label>
+            <input type="text" class="second" placeholder="any text">
+        </div>
+        <div class="send-buttons">
+            <input type="button" value="SEND">
+        </div>
+    </form>
+</div>
+
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                title: 'popup',
+                buttons: [{
+                    text: $.mage.__('Continue'),
+                    class: '',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+
+            var popup = modal(options, $('#popup-modal'));
+            $("#popup").on('click',function(){
+                $("#popup-modal").modal("openModal");
+            });
+
+        }
+    );
+</script>
